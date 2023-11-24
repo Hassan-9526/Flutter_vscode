@@ -19,6 +19,10 @@ class HomePage extends StatelessWidget {
       drawer: const Drawer(
         backgroundColor: Colors.red,
       ),
+      bottomNavigationBar: BottomAppBar(
+        color: Colors.amber,
+        height: 100,
+      ),
     );
   }
 }
