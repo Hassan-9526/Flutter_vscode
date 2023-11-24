@@ -1,23 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Home_page.dart';
 
-void main(){
-  runApp(myapp());
+void main() {
+  runApp(const MyApp());
 }
-class myapp extends StatelessWidget {
-  const myapp({super.key});
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Material(
-
-      child:Center(
-        child: Container(
-          color: Colors.amberAccent,
-          child: const Text("Welcome to 30 days of fultter"),
-          ),
-      )
-      ),
+    return const MaterialApp(
+      home: HomePage(),
     );
   }
-} 
+}
