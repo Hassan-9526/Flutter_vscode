@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
     );
   }
 
-  void bringvegtables({@required bool thaila = false, int ruppes = 100}) {
+  void bringvegtables({bool thaila = false, int ruppes = 100}) {
     print("The value of thaila is $thaila and you will give me $ruppes rs");
   }
 }
