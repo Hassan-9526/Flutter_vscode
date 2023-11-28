@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -21,10 +22,16 @@ class HomePage extends StatelessWidget {
       ),
       drawer: const Drawer(
         backgroundColor: Colors.red,
+        child: Text("For more queries contact us:03069820579"),
       ),
       bottomNavigationBar: BottomAppBar(
         color: Colors.amber,
         height: 100,
+        child: Center(
+            child: Container(
+                child: Text(
+          "For more queries contact us :03069820579",
+        ))),
       ),
     );
   }

@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       // home: HomePage(),
 
-      themeMode: ThemeMode.light,
+      themeMode: ThemeMode.system,
       theme: ThemeData(
           primarySwatch: Colors.teal,
           fontFamily: GoogleFonts.balooBhai2().fontFamily,
