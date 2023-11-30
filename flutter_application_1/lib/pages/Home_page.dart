@@ -1,4 +1,7 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/main.dart';
+import 'package:flutter_application_1/utils/routes.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class HomePage extends StatelessWidget {
@@ -7,6 +10,7 @@ class HomePage extends StatelessWidget {
   final String name = "hassan";
   @override
   Widget build(BuildContext context) {
+    bool theme = false;
     return Scaffold(
       appBar: AppBar(
         title: Text("My First App"),
@@ -20,17 +24,25 @@ class HomePage extends StatelessWidget {
           ),
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+        child: Text("back"),
+        onPressed: () {
+          Navigator.pushNamed(context, MyRoutes.loginroute);
+        },
+      ),
       drawer: const Drawer(
         backgroundColor: Colors.red,
         child: Text("For more queries contact us:03069820579"),
       ),
+      drawerDragStartBehavior: DragStartBehavior.start,
       bottomNavigationBar: BottomAppBar(
-        color: Colors.amber,
-        height: 100,
+        color: Colors.greenAccent,
+        height: 30,
         child: Center(
             child: Container(
                 child: Text(
           "For more queries contact us :03069820579",
+          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
         ))),
       ),
     );
