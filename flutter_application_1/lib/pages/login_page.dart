@@ -19,7 +19,7 @@ class _LoginPageState extends State<LoginPage> {
       setState(() => {
             changeButton = true,
           });
-      await Future.delayed(Duration(seconds: 1));
+      await Future.delayed(Duration(seconds: 3));
       await Navigator.pushNamed(context, MyRoutes.homeroute);
       setState(() => {
             changeButton = false,
@@ -38,7 +38,7 @@ class _LoginPageState extends State<LoginPage> {
           child: Column(children: [
             Image.asset("assets/images/login_image.png", fit: BoxFit.contain),
             const SizedBox(
-              height: 34.0,
+              height: 10.0,
             ),
             Text(
               "Welcome to login page $name",
@@ -93,7 +93,7 @@ class _LoginPageState extends State<LoginPage> {
                   height: 40.0,
                 ),
                 Material(
-                  borderRadius: BorderRadius.circular(23.9),
+                  borderRadius: BorderRadius.circular(100.9),
                   color: Colors.tealAccent,
                   child: InkWell(
                       mouseCursor: MaterialStateMouseCursor.textable,

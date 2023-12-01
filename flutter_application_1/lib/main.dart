@@ -14,18 +14,19 @@ class MyApp extends StatelessWidget {
     bringvegtables(thaila: true);
     return MaterialApp(
       // home: HomePage(),
-
+      debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.system,
       theme: ThemeData(
-          primarySwatch: Colors.teal,
+          primarySwatch: Colors.purple,
           fontFamily: GoogleFonts.balooBhai2().fontFamily,
           scrollbarTheme: ScrollbarThemeData(
             trackBorderColor: MaterialStateProperty.all(Colors.blueAccent),
           )),
 
       darkTheme:
-          ThemeData(brightness: Brightness.dark, primarySwatch: Colors.grey),
+          ThemeData(brightness: Brightness.dark, primarySwatch: Colors.purple),
       initialRoute: MyRoutes.loginroute,
+
       routes: {
         MyRoutes.loginroute: (context) => LoginPage(),
         MyRoutes.homeroute: (context) => HomePage(),

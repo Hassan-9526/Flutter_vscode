@@ -2,11 +2,13 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/main.dart';
 import 'package:flutter_application_1/utils/routes.dart';
+import 'package:flutter_application_1/widgets/drawer.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
   final int days = 30;
+
   final String name = "hassan";
   @override
   Widget build(BuildContext context) {
@@ -30,10 +32,7 @@ class HomePage extends StatelessWidget {
           Navigator.pushNamed(context, MyRoutes.loginroute);
         },
       ),
-      drawer: const Drawer(
-        backgroundColor: Colors.red,
-        child: Text("For more queries contact us:03069820579"),
-      ),
+      drawer: Mydrawer(),
       drawerDragStartBehavior: DragStartBehavior.start,
       bottomNavigationBar: BottomAppBar(
         color: Colors.greenAccent,
