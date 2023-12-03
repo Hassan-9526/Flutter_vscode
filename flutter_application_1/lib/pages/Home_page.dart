@@ -19,7 +19,6 @@ class HomePage extends StatelessWidget {
       ),
       body: Center(
         child: Container(
-          color: Colors.deepOrangeAccent,
           child: Text(
             "Welcome to  fultter by $name ",
             style: TextStyle(fontSize: 24.0),
