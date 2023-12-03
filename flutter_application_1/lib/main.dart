@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/pages/Home_page.dart';
 import 'package:flutter_application_1/pages/login_page.dart';
 import 'package:flutter_application_1/utils/routes.dart';
+import 'package:flutter_application_1/widgets/themes.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
@@ -16,16 +17,10 @@ class MyApp extends StatelessWidget {
       // home: HomePage(),
       debugShowCheckedModeBanner: false,
       themeMode: ThemeMode.system,
-      theme: ThemeData(
-          primarySwatch: Colors.purple,
-          fontFamily: GoogleFonts.balooBhai2().fontFamily,
-          scrollbarTheme: ScrollbarThemeData(
-            trackBorderColor: MaterialStateProperty.all(Colors.blueAccent),
-          )),
+      theme: MyThemes.lighttheme(context),
 
-      darkTheme:
-          ThemeData(brightness: Brightness.dark, primarySwatch: Colors.purple),
-      initialRoute: MyRoutes.loginroute,
+      darkTheme: MyThemes.darkTheme(context),
+      initialRoute: MyRoutes.homeroute,
 
       routes: {
         MyRoutes.loginroute: (context) => LoginPage(),

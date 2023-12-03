@@ -10,16 +10,6 @@ class Mydrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
         backgroundColor: Colors.purple,
-        // child: ListView(
-        //   children: [
-        //     UserAccountsDrawerHeader(
-        //       accountName: Text("Hassan Amir"),
-        //       accountEmail: Text("ha4383731@gmail.com"),
-        //       currentAccountPicture:
-        //           Image.network("assets/images/login_image.png"),
-        //     )
-        //   ],
-        // ),
         child: ListView(
           children: [
             UserAccountsDrawerHeader(
@@ -56,7 +46,7 @@ class Mydrawer extends StatelessWidget {
               },
             ),
             SizedBox(
-              height: 18,
+              height: 2,
             ),
             ListTile(
               leading: Icon(
@@ -77,7 +67,7 @@ class Mydrawer extends StatelessWidget {
               },
             ),
             SizedBox(
-              height: 18,
+              height: 2,
             ),
             ListTile(
               leading: Icon(

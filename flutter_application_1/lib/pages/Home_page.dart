@@ -15,7 +15,7 @@ class HomePage extends StatelessWidget {
     bool theme = false;
     return Scaffold(
       appBar: AppBar(
-        title: Text("My First App"),
+        title: Text("Catalog App"),
       ),
       body: Center(
         child: Container(
@@ -33,7 +33,6 @@ class HomePage extends StatelessWidget {
         },
       ),
       drawer: Mydrawer(),
-      drawerDragStartBehavior: DragStartBehavior.start,
       bottomNavigationBar: BottomAppBar(
         color: Colors.greenAccent,
         height: 30,
