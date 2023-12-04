@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 
 void main() {
   runApp(const MyApp());
@@ -120,6 +121,53 @@ class _MyHomePageState extends State<MyHomePage> {
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
+    );
+  }
+}
+
+class home extends StatelessWidget {
+  const home({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Container(
+          child: Row(
+            children: [
+              SizedBox(
+                width: 90,
+              ),
+              Column(
+                children: [
+                  Icon(CupertinoIcons.phone),
+                  Container(child: Text("phone"))
+                ],
+              ),
+              SizedBox(
+                height: 30,
+                width: 30,
+              ),
+              Column(
+                children: [
+                  Icon(CupertinoIcons.location),
+                  Container(child: Text("location"))
+                ],
+              ),
+              SizedBox(
+                height: 30,
+                width: 30,
+              ),
+              Column(
+                children: [
+                  Icon(CupertinoIcons.share),
+                  Container(child: Text("Share"))
+                ],
+              )
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
