@@ -9,9 +9,9 @@ import 'package:flutter_application_1/widgets/item_widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  HomePage({super.key});
   final int days = 30;
-
+  final dummylist = List.generate(50, (index) => CatalogModel.item[0]);
   final String name = "hassan";
   @override
   Widget build(BuildContext context) {
@@ -23,10 +23,10 @@ class HomePage extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(12.0),
         child: ListView.builder(
-          itemCount: CatalogModel.item.length,
+          itemCount: dummylist.length,
           itemBuilder: (context, index) {
             return ItemWidget(
-              item: CatalogModel.item[index],
+              item: dummylist[index],
             );
           },
         ),
