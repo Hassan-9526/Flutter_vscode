@@ -23,6 +23,7 @@ class CatalogModel {
         desc: "64GB 4GB RAM",
         price: 32000,
         color: "33505a",
-        image: "assets/images/infinx_hot11s.jpg")
+        image:
+            "https://cdn.pixabay.com/photo/2023/11/24/10/15/cockatoo-8409655_1280.jpg")
   ];
 }

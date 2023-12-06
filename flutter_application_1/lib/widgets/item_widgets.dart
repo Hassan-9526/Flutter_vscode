@@ -1,4 +1,4 @@
-import 'dart:io';
+// import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/models/Catalog.dart';
 
@@ -14,7 +14,7 @@ class ItemWidget extends StatelessWidget {
         onTap: () {
           print("infinix hot 11s pressed");
         },
-        leading: Image.asset(item.image),
+        leading: Image.network(item.image),
         title: Text(
           item.name,
           style: TextStyle(color: Colors.black),

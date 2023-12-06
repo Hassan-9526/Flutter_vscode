@@ -1,0 +1,28 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "Infinix hot 11s",
+            "desc": "64GB 4GB RAM",
+            "price": 32000,
+            "color": "33505a",
+            "image": "https://cdn.pixabay.com/photo/2023/11/24/10/15/cockatoo-8409655_1280.jpg"
+        },
+        {
+            "id": 1,
+            "name": "Infinix hot 11s",
+            "desc": "64GB 4GB RAM",
+            "price": 32000,
+            "color": "33505a",
+            "image": "https://cdn.pixabay.com/photo/2023/11/24/10/15/cockatoo-8409655_1280.jpg"
+        },
+        {
+            "id": 1,
+            "name": "Infinix hot 11s",
+            "desc": "64GB 4GB RAM",
+            "price": 32000,
+            "color": "33505a",
+            "image": "https://cdn.pixabay.com/photo/2023/11/24/10/15/cockatoo-8409655_1280.jpg"
+        }
+    ]
+}
