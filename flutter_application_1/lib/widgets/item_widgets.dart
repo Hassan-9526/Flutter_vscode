@@ -9,7 +9,7 @@ class ItemWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: Color.fromARGB(255, 144, 100, 255),
+      color: Colors.white70,
       child: ListTile(
         onTap: () {
           print("infinix hot 11s pressed");
@@ -27,7 +27,7 @@ class ItemWidget extends StatelessWidget {
         enableFeedback: true,
         trailing: Text(
           "${item.price.toString()}rs",
-          style: TextStyle(fontSize: 25, color: Colors.deepPurple),
+          style: TextStyle(fontSize: 25, color: Colors.blueGrey),
         ),
       ),
     );

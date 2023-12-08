@@ -20,20 +20,22 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final int days = 30;
 
-  final dummylist = List.generate(50, (index) => CatalogModel.item[0]);
-
   final String name = "hassan";
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     loadData();
   }
 
   loadData() async {
+    await Future.delayed(Duration(seconds: 3));
     var catalogjson = await rootBundle.loadString("assets/files/catalog.json");
     var decoded = jsonDecode(catalogjson);
     var productsdata = decoded["products"];
+    CatalogModel.items = List.from(productsdata)
+        .map<Item>((item) => Item.fromMap(item))
+        .toList();
+    setState(() {});
   }
 
   @override
@@ -44,16 +46,19 @@ class _HomePageState extends State<HomePage> {
         title: Text("Catalog App"),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(12.0),
-        child: ListView.builder(
-          itemCount: dummylist.length,
-          itemBuilder: (context, index) {
-            return ItemWidget(
-              item: dummylist[index],
-            );
-          },
-        ),
-      ),
+          padding: const EdgeInsets.all(12.0),
+          child: (CatalogModel.items != null && CatalogModel.items.isNotEmpty)
+              ? ListView.builder(
+                  itemCount: CatalogModel.items.length,
+                  itemBuilder: (context, index) {
+                    return ItemWidget(
+                      item: CatalogModel.items[index],
+                    );
+                  },
+                )
+              : Center(
+                  child: CircularProgressIndicator(),
+                )),
       floatingActionButton: FloatingActionButton(
         child: Text("back"),
         onPressed: () {
@@ -63,7 +68,7 @@ class _HomePageState extends State<HomePage> {
       drawer: Mydrawer(),
       bottomNavigationBar: BottomAppBar(
         color: Colors.greenAccent,
-        height: 30,
+        height: 50,
         child: Center(
             child: Container(
                 child: Text(
