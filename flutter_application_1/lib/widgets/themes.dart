@@ -13,6 +13,10 @@ class MyThemes {
       scrollbarTheme: ScrollbarThemeData(
         trackBorderColor: MaterialStateProperty.all(Colors.blueAccent),
       ));
-  static darkTheme(BuildContext context) =>
-      ThemeData(brightness: Brightness.dark, primarySwatch: Colors.purple);
+  static darkTheme(BuildContext context) => ThemeData(
+      brightness: Brightness.dark,
+      primarySwatch: Colors.purple,
+      appBarTheme: AppBarTheme(backgroundColor: Colors.blue),
+      scrollbarTheme: ScrollbarThemeData(
+          trackBorderColor: MaterialStatePropertyAll(Colors.blue)));
 }

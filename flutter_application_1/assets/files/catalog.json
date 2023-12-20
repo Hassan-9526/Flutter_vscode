@@ -39,6 +39,46 @@
             "price": 1500,
             "color": "33505a",
             "image": "https://static-01.daraz.pk/p/c1501036292f85a07ce66b4bef17a10c.jpg"
+        },
+        {
+            "id": 1,
+            "name": "Infinix hot 11s",
+            "desc": "64GB 4GB RAM",
+            "price": 32000,
+            "color": "33505a",
+            "image": "https://files.gsmchoice.com/phones/infinix-hot-11s/infinix-hot-11s-big.jpg"
+        },
+        {
+            "id": 1,
+            "name": "Samsung Note 9",
+            "desc": "128GB 6GB RAM",
+            "price": 50000,
+            "color": "33505a",
+            "image": "https://mobilemall.pk/public_html/images/product/product_1596821319Samsung%20Galaxy%20Note%209%20512GB%20Price%20%20%20Pakistan.jpg"
+        },
+        {
+            "id": 1,
+            "name": "Macbook pro",
+            "desc": "64GB 4GB RAM",
+            "price": 200000,
+            "color": "33505a",
+            "image": "https://applemac.pk/public/uploads/products/org/1634804267.jpg"
+        },
+        {
+            "id": 1,
+            "name": "Dell latitude 5490",
+            "desc": "256GB 8GB RAM",
+            "price": 60000,
+            "color": "33505a",
+            "image": "https://5.imimg.com/data5/SELLER/Default/2022/8/GT/TK/NY/34738514/dell-latitude-e5490-500x500.jpeg"
+        },
+        {
+            "id": 1,
+            "name": "Airpods 6 pro",
+            "desc": "4 Hours battery timing ",
+            "price": 1500,
+            "color": "33505a",
+            "image": "https://static-01.daraz.pk/p/c1501036292f85a07ce66b4bef17a10c.jpg"
         }
     ]
 }

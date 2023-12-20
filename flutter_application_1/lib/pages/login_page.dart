@@ -97,7 +97,7 @@ class _LoginPageState extends State<LoginPage> {
                   color: Colors.tealAccent,
                   child: InkWell(
                       mouseCursor: MaterialStateMouseCursor.textable,
-                      highlightColor: Colors.amberAccent,
+                      highlightColor: Colors.red,
                       splashColor: Colors.deepPurple,
                       focusColor: Colors.indigoAccent,
                       enableFeedback: true,
