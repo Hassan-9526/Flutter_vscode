@@ -19,4 +19,6 @@ class MyThemes {
       appBarTheme: AppBarTheme(backgroundColor: Colors.blue),
       scrollbarTheme: ScrollbarThemeData(
           trackBorderColor: MaterialStatePropertyAll(Colors.blue)));
+  static Color cream = Color(0xfff5f5f5);
+  static Color darkblue = Color.fromARGB(255, 103, 93, 127);
 }

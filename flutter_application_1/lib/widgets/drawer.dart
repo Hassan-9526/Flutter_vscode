@@ -42,7 +42,7 @@ class Mydrawer extends StatelessWidget {
               iconColor: Colors.cyan,
               // tileColor: Color.fromARGB(23, 54, 78, 178),
               onTap: () {
-                Navigator.pushNamed(context, MyRoutes.loginroute);
+                Navigator.pushNamed(context, MyRoutes.homevxroute);
               },
             ),
             SizedBox(
