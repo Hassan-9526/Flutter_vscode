@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/pages/Home_detail_page.dart';
 import 'package:flutter_application_1/pages/Home_page.dart';
 import 'package:flutter_application_1/pages/Home_page_vx.dart';
 import 'package:flutter_application_1/pages/login_page.dart';
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
         MyRoutes.loginroute: (context) => LoginPage(),
         MyRoutes.homeroute: (context) => HomePage(),
         MyRoutes.homevxroute: (context) => HomePagevx(),
+        // MyRoutes.homedetail: (context) => homedetail(catalog: catalog)
       },
     );
   }

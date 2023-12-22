@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_application_1/main.dart';
 import 'package:flutter_application_1/models/Catalog.dart';
+import 'package:flutter_application_1/pages/Home_detail_page.dart';
 import 'package:flutter_application_1/utils/routes.dart';
 import 'package:flutter_application_1/widgets/drawer.dart';
 import 'package:flutter_application_1/widgets/item_widgets.dart';
@@ -57,7 +58,7 @@ class _HomePageState extends State<HomePagevx> {
           if (CatalogModel.items != null && CatalogModel.items.isNotEmpty)
             Expanded(child: cataloglist())
           else
-            Center(child: CircularProgressIndicator())
+            Expanded(child: Center(child: CircularProgressIndicator()))
         ],
       ),
     );
@@ -111,7 +112,13 @@ class cataloglist extends StatelessWidget {
       shrinkWrap: true,
       itemBuilder: (context, index) {
         final catalog = CatalogModel.items[index];
-        return CatalogItem(Catalog: catalog);
+
+        return InkWell(
+            onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => homedetail(catalog: catalog))),
+            child: CatalogItem(Catalog: catalog));
       },
     );
   }
@@ -134,7 +141,9 @@ class CatalogItem extends StatelessWidget {
       width: 100,
       child: Row(
         children: [
-          catalogimage(Image1: Catalog.image),
+          Hero(
+              tag: Key(Catalog.id.toString()),
+              child: catalogimage(Image1: Catalog.image)),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
