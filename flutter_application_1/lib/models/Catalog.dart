@@ -4,7 +4,7 @@ import 'dart:convert';
 class CatalogModel {
   static var items = <Item>[];
 
-  static Item getbyId(int id) =>
+  Item getbyId(int id) =>
       items.firstWhere((element) => element.id == id, orElse: null);
 
   static Item getbyPosition(int pos) => items[pos];

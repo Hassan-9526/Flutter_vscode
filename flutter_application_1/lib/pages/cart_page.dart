@@ -52,7 +52,11 @@ class _Carttotal extends StatelessWidget {
                 color: MyThemes.darkblue),
           ).p(20),
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                content: Text("Buying not supported yet."),
+              ));
+            },
             child: Text(
               "Buy",
               style: TextStyle(color: Colors.white, fontSize: 23),
