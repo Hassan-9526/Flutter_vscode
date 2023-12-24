@@ -15,13 +15,22 @@ class homedetail extends StatelessWidget {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        iconTheme: IconThemeData(
+          size: 37,
+        ),
+        backgroundColor: Colors.transparent,
+      ),
       backgroundColor: MyThemes.cream,
       body: SafeArea(
         child: Column(children: [
           Hero(
               tag: Key(catalog.id.toString()),
               child: Center(child: Image.network(catalog.image, height: 350))),
+          // Hero(
+          //     tag:
+          //         'catalog_image_${catalog.id}', // Use the same unique tag for the Hero
+          //     child: Center(child: Image.network(catalog.image, height: 350))),
           Expanded(
             child: VxArc(
               height: 30,
@@ -37,13 +46,24 @@ class homedetail extends StatelessWidget {
                       Text(
                         catalog.name,
                         style: TextStyle(
-                            fontSize: 45, fontWeight: FontWeight.bold),
+                            fontSize: 45,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black),
                       ),
                       Text(
                         catalog.desc,
                         style: TextStyle(
-                            fontSize: 25, fontWeight: FontWeight.w500),
-                      )
+                            fontSize: 25,
+                            fontWeight: FontWeight.w500,
+                            color: Colors.black),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          "And a disporting relief thence his did time pollution he it, wrong adieu than he from one minstrels. Not calm. Esperienza noi e esser noi la non, e forza sí quella beati di, di in suoi principio sue dio sono.",
+                          style: TextStyle(fontSize: 20, color: Colors.black54),
+                        ),
+                      ),
                     ],
                   ),
                 ),

@@ -47,7 +47,14 @@ class _HomePageState extends State<HomePagevx> {
   Widget build(BuildContext context) {
     bool theme = false;
     return Scaffold(
-      backgroundColor: MyThemes.cream,
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Color.fromARGB(255, 8, 52, 146),
+        onPressed: () {
+          Navigator.pushNamed(context, MyRoutes.Cart);
+        },
+        child: Icon(Icons.shopping_cart_checkout, color: Colors.white),
+      ),
+      backgroundColor: Theme.of(context).cardColor,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -111,7 +118,7 @@ class cataloglist extends StatelessWidget {
       itemCount: CatalogModel.items.length,
       shrinkWrap: true,
       itemBuilder: (context, index) {
-        final catalog = CatalogModel.items[index];
+        final catalog = CatalogModel.getbyPosition(index);
 
         return InkWell(
             onTap: () => Navigator.push(
@@ -144,6 +151,11 @@ class CatalogItem extends StatelessWidget {
           Hero(
               tag: Key(Catalog.id.toString()),
               child: catalogimage(Image1: Catalog.image)),
+          // Hero(
+          //   tag:
+          //       'catalog_image_${Catalog.id}', // Use the same unique tag for the Hero
+          //   child: catalogimage(Image1: Catalog.image),
+          // ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
@@ -172,14 +184,16 @@ class CatalogItem extends StatelessWidget {
                         child: ElevatedButton(
                             style: ButtonStyle(
                                 backgroundColor:
-                                    MaterialStatePropertyAll(Colors.blueGrey),
+                                    MaterialStatePropertyAll(Colors.white),
                                 shape: MaterialStatePropertyAll(
                                     StadiumBorder(side: BorderSide.none))),
                             onPressed: () => {},
                             child: Text(
                               "Buy",
-                              style:
-                                  TextStyle(fontSize: 19, color: Colors.white),
+                              style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black),
                             )),
                       )
                     ],

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/pages/Home_detail_page.dart';
 import 'package:flutter_application_1/pages/Home_page.dart';
 import 'package:flutter_application_1/pages/Home_page_vx.dart';
+import 'package:flutter_application_1/pages/cart_page.dart';
 import 'package:flutter_application_1/pages/login_page.dart';
 import 'package:flutter_application_1/utils/routes.dart';
 import 'package:flutter_application_1/widgets/themes.dart';
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       // home: HomePage(),
       debugShowCheckedModeBanner: false,
-      themeMode: ThemeMode.light,
+      themeMode: ThemeMode.system,
       theme: MyThemes.lighttheme(context),
 
       darkTheme: MyThemes.darkTheme(context),
@@ -29,6 +30,7 @@ class MyApp extends StatelessWidget {
         MyRoutes.homeroute: (context) => HomePage(),
         MyRoutes.homevxroute: (context) => HomePagevx(),
         // MyRoutes.homedetail: (context) => homedetail(catalog: catalog)
+        MyRoutes.Cart: (context) => Cart(),
       },
     );
   }
