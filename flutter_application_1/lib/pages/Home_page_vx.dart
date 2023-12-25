@@ -5,15 +5,17 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:velocity_x/velocity_x.dart';
+
 import 'package:flutter_application_1/main.dart';
 import 'package:flutter_application_1/models/Catalog.dart';
+import 'package:flutter_application_1/models/cart.dart';
 import 'package:flutter_application_1/pages/Home_detail_page.dart';
 import 'package:flutter_application_1/utils/routes.dart';
 import 'package:flutter_application_1/widgets/drawer.dart';
 import 'package:flutter_application_1/widgets/item_widgets.dart';
 import 'package:flutter_application_1/widgets/themes.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:velocity_x/velocity_x.dart';
 
 class HomePagevx extends StatefulWidget {
   HomePagevx({Key? key}) : super(key: key);
@@ -147,60 +149,41 @@ class CatalogItem extends StatelessWidget {
       height: 130,
       width: 100,
       child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Hero(
               tag: Key(Catalog.id.toString()),
               child: catalogimage(Image1: Catalog.image)),
-          // Hero(
-          //   tag:
-          //       'catalog_image_${Catalog.id}', // Use the same unique tag for the Hero
-          //   child: catalogimage(Image1: Catalog.image),
-          // ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(Catalog.name,
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 23,
-                      fontWeight: FontWeight.bold)),
-              Text(
-                Catalog.desc,
-                style: TextStyle(color: MyThemes.cream, fontSize: 18),
-              ),
-              Row(
-                children: [
-                  ButtonBar(
-                    alignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        Catalog.price.toString(),
-                        style: TextStyle(
-                            fontSize: 24, fontWeight: FontWeight.bold),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 30.0),
-                        child: ElevatedButton(
-                            style: ButtonStyle(
-                                backgroundColor:
-                                    MaterialStatePropertyAll(Colors.white),
-                                shape: MaterialStatePropertyAll(
-                                    StadiumBorder(side: BorderSide.none))),
-                            onPressed: () => {},
-                            child: Text(
-                              "Buy",
-                              style: TextStyle(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.black),
-                            )),
-                      )
-                    ],
-                  ),
-                ],
-              )
-            ],
+          SizedBox(
+            width: 16,
+          ),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(Catalog.name,
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 23,
+                        fontWeight: FontWeight.bold)),
+                Text(
+                  Catalog.desc,
+                  style: TextStyle(color: MyThemes.cream, fontSize: 18),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "\$${Catalog.price}",
+                      style:
+                          TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                    ),
+                    _Addtocart(catalog: Catalog),
+                  ],
+                )
+              ],
+            ),
           )
         ],
       ),
@@ -218,7 +201,7 @@ class catalogimage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(12.0),
+      padding: const EdgeInsets.only(left: 10.0, top: 10, bottom: 10, right: 5),
       child: Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(12),
@@ -226,8 +209,47 @@ class catalogimage extends StatelessWidget {
           ),
           height: 200,
           width: 120,
-          margin: EdgeInsets.only(left: 20),
+          // margin: EdgeInsets.only(left: 20),
           child: Image.network(Image1)),
     );
+  }
+}
+
+class _Addtocart extends StatefulWidget {
+  final Item catalog;
+  const _Addtocart({
+    required this.catalog,
+  });
+  @override
+  State<_Addtocart> createState() => _AddtocartState();
+}
+
+class _AddtocartState extends State<_Addtocart> {
+  bool isadded = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+        style: ButtonStyle(
+            backgroundColor: MaterialStatePropertyAll(Colors.white),
+            shape:
+                MaterialStatePropertyAll(StadiumBorder(side: BorderSide.none))),
+        onPressed: () {
+          isadded = !isadded;
+          final _catalog = CatalogModel();
+          final _cart = Cartmodel();
+          _cart.catalog = _catalog;
+          _cart.add(widget.catalog);
+          setState(() {});
+        },
+        child: isadded
+            ? Icon(Icons.done)
+            : Text(
+                "Add to cart",
+                style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black),
+              ));
   }
 }

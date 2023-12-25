@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/models/Catalog.dart';
+import 'package:flutter_application_1/models/cart.dart';
 import 'package:flutter_application_1/pages/Home_page_vx.dart';
 import 'package:flutter_application_1/widgets/themes.dart';
 import 'package:velocity_x/velocity_x.dart';
@@ -13,6 +14,7 @@ class homedetail extends StatelessWidget {
   final Item catalog;
   @override
   Widget build(BuildContext context) {
+    bool isadded = false;
     var size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
@@ -93,11 +95,18 @@ class homedetail extends StatelessWidget {
                           MaterialStatePropertyAll(Colors.deepPurple.shade400),
                       shape: MaterialStatePropertyAll(
                           StadiumBorder(side: BorderSide.none))),
-                  onPressed: () => {},
+                  onPressed: () {
+                    //             isadded = !isadded;
+                    //  final  _catalog = CatalogModel();
+                    //   final _cart = Cartmodel();
+                    //   _cart.catalog = _catalog;
+                    //   _cart.add(widget.catalog);
+                    //   setState(() {});
+                  },
                   child: Text(
-                    "Buy",
-                    style: TextStyle(fontSize: 30, color: Colors.white),
-                  )).w32(context).h8(context),
+                    "Add to cart",
+                    style: TextStyle(fontSize: 23, color: Colors.white),
+                  )).w40(context).h8(context),
             )
           ],
         ),
