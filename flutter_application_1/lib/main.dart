@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/core/store.dart';
 import 'package:flutter_application_1/pages/Home_detail_page.dart';
 import 'package:flutter_application_1/pages/Home_page.dart';
 import 'package:flutter_application_1/pages/Home_page_vx.dart';
@@ -7,9 +8,10 @@ import 'package:flutter_application_1/pages/login_page.dart';
 import 'package:flutter_application_1/utils/routes.dart';
 import 'package:flutter_application_1/widgets/themes.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(VxState(store: mystore(), child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
