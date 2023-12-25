@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/models/Catalog.dart';
 import 'package:flutter_application_1/models/cart.dart';
 import 'package:flutter_application_1/pages/Home_page_vx.dart';
+import 'package:flutter_application_1/widgets/Addtocart.dart';
 import 'package:flutter_application_1/widgets/themes.dart';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -88,26 +89,10 @@ class homedetail extends StatelessWidget {
                   color: Colors.black87),
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 30.0),
-              child: ElevatedButton(
-                  style: ButtonStyle(
-                      backgroundColor:
-                          MaterialStatePropertyAll(Colors.deepPurple.shade400),
-                      shape: MaterialStatePropertyAll(
-                          StadiumBorder(side: BorderSide.none))),
-                  onPressed: () {
-                    //             isadded = !isadded;
-                    //  final  _catalog = CatalogModel();
-                    //   final _cart = Cartmodel();
-                    //   _cart.catalog = _catalog;
-                    //   _cart.add(widget.catalog);
-                    //   setState(() {});
-                  },
-                  child: Text(
-                    "Add to cart",
-                    style: TextStyle(fontSize: 23, color: Colors.white),
-                  )).w40(context).h8(context),
-            )
+                padding: const EdgeInsets.only(left: 30.0),
+                child: Addtocart(
+                  catalog: catalog,
+                ).w40(context).h15(context)),
           ],
         ),
       ),

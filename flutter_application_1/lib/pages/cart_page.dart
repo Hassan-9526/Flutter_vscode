@@ -1,9 +1,11 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:velocity_x/velocity_x.dart';
+
 import 'package:flutter_application_1/models/Catalog.dart';
 import 'package:flutter_application_1/models/cart.dart';
 import 'package:flutter_application_1/widgets/themes.dart';
-import 'package:velocity_x/velocity_x.dart';
 
 class Cart extends StatelessWidget {
   const Cart({super.key});
@@ -74,7 +76,9 @@ class _Carttotal extends StatelessWidget {
 }
 
 class _cartlist extends StatefulWidget {
-  const _cartlist({super.key});
+  const _cartlist({
+    Key? key,
+  }) : super(key: key);
 
   @override
   State<_cartlist> createState() => __cartlistState();
@@ -83,15 +87,29 @@ class _cartlist extends StatefulWidget {
 class __cartlistState extends State<_cartlist> {
   @override
   final cart = Cartmodel();
+  final _cart = Cartmodel();
   final catalog = CatalogModel();
   Widget build(BuildContext context) {
-    return ListView.builder(
-        itemCount: cart.items?.length,
-        itemBuilder: (context, index) => ListTile(
-              leading: Icon(Icons.done),
-              // tileColor: MyThemes.darkblue,
-              trailing: IconButton(onPressed: () {}, icon: Icon(Icons.delete)),
-              title: Text(cart.items[index].name),
-            ));
+    bool isInCart = true;
+    return cart.items.isEmpty
+        ? Center(
+            child: Text(
+              "Your Cart is Empty",
+              style: TextStyle(fontSize: 56, fontWeight: FontWeight.w400),
+            ),
+          )
+        : ListView.builder(
+            itemCount: cart.items?.length,
+            itemBuilder: (context, index) => ListTile(
+                  leading: Icon(Icons.done),
+                  // tileColor: MyThemes.darkblue,
+                  trailing: IconButton(
+                      onPressed: () {
+                        _cart.remove(_cart.items[index]);
+                        setState(() {});
+                      },
+                      icon: Icon(Icons.delete)),
+                  title: Text(cart.items[index].name),
+                ));
   }
 }

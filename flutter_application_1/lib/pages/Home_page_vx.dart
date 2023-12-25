@@ -5,6 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_application_1/widgets/Addtocart.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -179,7 +180,9 @@ class CatalogItem extends StatelessWidget {
                       style:
                           TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
                     ),
-                    _Addtocart(catalog: Catalog),
+                    Addtocart(
+                      catalog: Catalog,
+                    ),
                   ],
                 )
               ],
@@ -215,41 +218,47 @@ class catalogimage extends StatelessWidget {
   }
 }
 
-class _Addtocart extends StatefulWidget {
-  final Item catalog;
-  const _Addtocart({
-    required this.catalog,
-  });
-  @override
-  State<_Addtocart> createState() => _AddtocartState();
-}
+// class Addtocart extends StatefulWidget {
+//   final Item catalog;
+//   const Addtocart({
+//     required this.catalog,
+//   });
+//   @override
+//   State<Addtocart> createState() => _AddtocartState();
+// }
 
-class _AddtocartState extends State<_Addtocart> {
-  bool isadded = false;
-
-  @override
-  Widget build(BuildContext context) {
-    return ElevatedButton(
-        style: ButtonStyle(
-            backgroundColor: MaterialStatePropertyAll(Colors.white),
-            shape:
-                MaterialStatePropertyAll(StadiumBorder(side: BorderSide.none))),
-        onPressed: () {
-          isadded = !isadded;
-          final _catalog = CatalogModel();
-          final _cart = Cartmodel();
-          _cart.catalog = _catalog;
-          _cart.add(widget.catalog);
-          setState(() {});
-        },
-        child: isadded
-            ? Icon(Icons.done)
-            : Text(
-                "Add to cart",
-                style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black),
-              ));
-  }
-}
+// class _AddtocartState extends State<Addtocart> {
+//   final _cart = Cartmodel();
+//   @override
+//   Widget build(BuildContext context) {
+//     bool isInCart = _cart.items.contains(widget.catalog) ?? false;
+//     return ElevatedButton(
+//         style: ButtonStyle(
+//             backgroundColor: MaterialStatePropertyAll(Colors.white),
+//             shape:
+//                 MaterialStatePropertyAll(StadiumBorder(side: BorderSide.none))),
+//         onPressed: () {
+//           isInCart = !isInCart;
+//           if (!isInCart) {
+//             ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+//               content: Text("Already in cart"),
+//               action: SnackBarAction(label: "close", onPressed: () {}),
+//             ));
+//           } else {
+//             final _catalog = CatalogModel();
+//             _cart.catalog = _catalog;
+//             _cart.add(widget.catalog);
+//             setState(() {});
+//           }
+//         },
+//         child: isInCart
+//             ? Icon(Icons.done)
+//             : Text(
+//                 "Add to cart",
+//                 style: TextStyle(
+//                     fontSize: 20,
+//                     fontWeight: FontWeight.bold,
+//                     color: Colors.black),
+//               ));
+//   }
+// }
